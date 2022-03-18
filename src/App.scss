@@ -1,0 +1,23 @@
+@import './style/variables.scss';
+
+.app {
+  display: flex;
+
+  .sidebar-container {
+    height: 100vh;
+    width: 100px;
+    background-color: $black-color;
+
+    .logo {
+      background-color: $light-green-color;
+      color: #fff;
+      padding: 10px;
+    }
+  }
+
+  .home {
+    flex: 1;
+    height: 100vh;
+    background-color: #f2f2f2;
+  }
+}
