@@ -1,18 +1,18 @@
 import React from 'react';
 import { Chart } from 'primereact/chart';
 
-const Circle = () => {
-  let chartData = {
+const Circle = ({ chartData, labelNumber, labelTitle }) => {
+  let defaultData = {
     datasets: [
       {
-        data: [4, 1, 3, 7],
-        backgroundColor: ['#FF6384', '#eb9e0c', '#065109', '#eb9e0c'],
-        hoverBackgroundColor: ['#FF6384', '#FA4344', '#FF6384', '#FA6384'],
+        data: [1],
+        backgroundColor: ['#c3c5c5'],
+        hoverBackgroundColor: ['#c3c5c5'],
       },
     ],
   };
 
-  const lightOptions = {
+  const options = {
     plugins: {
       tooltip: {
         enabled: false,
@@ -31,13 +31,13 @@ const Circle = () => {
         width='100px'
         className='chart'
         type='doughnut'
-        data={chartData}
-        options={lightOptions}
+        data={chartData ? chartData : defaultData}
+        options={options}
         style={{ position: 'relative' }}
       />
       <div className='label'>
-        <span className='label-number'>2</span>
-        <span className='label-title'>Classes</span>
+        <span className='label-number'>{labelNumber ? labelNumber : '0'}</span>
+        <span className='label-title'>{labelTitle}</span>
       </div>
     </div>
   );

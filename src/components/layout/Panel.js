@@ -9,8 +9,8 @@ const Panel = () => {
       <div>
         <FullDay />
         <div className='progress-bar-container p-bar-today'>
-          <Circle />
-          <Circle />
+          <Circle labelTitle={'Classes'} />
+          <Circle labelTitle={'Exams'} />
         </div>
       </div>
       <div className='new-task'>
@@ -21,11 +21,11 @@ const Panel = () => {
             className='p-button-raised p-button-success btn'
           />
         </div>
-        <Circle />
+        <Circle labelTitle={'Tasks'} />
       </div>
       <div className='progress-bar-container p-bar-exams'>
         <p>Upcoming Exams</p>
-        <Circle />
+        <Circle labelTitle={'Exams'} />
       </div>
     </div>
   );
