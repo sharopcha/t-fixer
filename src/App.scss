@@ -3,9 +3,43 @@
 .app {
   display: flex;
 
+  .btn {
+    padding: 5px 15px;
+  }
+
+  .progress-bar {
+    height: 100px;
+    position: relative;
+    margin-top: -10px;
+
+    .label {
+      position: absolute;
+      top: 17%;
+      left: 37%;
+      font-weight: 400;
+      color: grey;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &-number {
+        font-size: 45px;
+        padding: 0;
+        margin: 0;
+      }
+
+      &-title {
+        font-size: 10px;
+        margin: -5px;
+        padding: 0;
+      }
+    }
+  }
+
   .sidebar-container {
     height: 100vh;
-    width: 100px;
+    width: 70px;
     background-color: $black-color;
 
     .logo {
@@ -13,11 +47,121 @@
       color: #fff;
       padding: 10px;
     }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2rem;
+      height: 50%;
+      font-size: 25px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    i:hover {
+      color: darken($color: #f2f2f2, $amount: 40);
+    }
   }
 
   .home {
     flex: 1;
     height: 100vh;
     background-color: #f2f2f2;
+
+    .panel {
+      width: 100%;
+      height: 120px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      & > div {
+        display: flex;
+        align-items: center;
+      }
+
+      .header {
+        margin-left: 20px;
+        .title {
+          font-size: 1.6rem;
+          font-weight: 400;
+          color: $black-color;
+        }
+
+        .subtitle {
+          color: lighten($color: $black-color, $amount: 4);
+        }
+      }
+
+      .progress-bar-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 20px;
+      }
+
+      .p-bar-today {
+        width: 300px;
+        justify-content: space-around;
+      }
+
+      .new-task {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 400px;
+        height: 100%;
+
+        p {
+          font-size: 24px;
+          font-weight: 400;
+          margin-bottom: 10px;
+        }
+      }
+
+      .p-bar-exams {
+        justify-content: space-around;
+
+        p {
+          font-size: 20px;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .home-container {
+      width: calc(100vw - 70px);
+      height: calc(100vh - 120px);
+      display: flex;
+      background-image: url('./logo_bg.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      overflow: hidden;
+
+      .today-classes {
+        flex: 1;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #cacaca;
+      }
+
+      .task {
+        flex: 1;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #cacaca;
+      }
+
+      .upcoming-exams {
+        flex: 1;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #cacaca;
+      }
+    }
   }
 }
