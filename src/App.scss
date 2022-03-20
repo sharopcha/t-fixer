@@ -10,7 +10,6 @@
   .progress-bar {
     height: 100px;
     position: relative;
-    margin-top: -10px;
 
     .label {
       position: absolute;
@@ -118,7 +117,6 @@
 
         p {
           font-size: 24px;
-          font-weight: 400;
           margin-bottom: 10px;
         }
       }
@@ -162,6 +160,12 @@
         height: 100%;
         border: 1px solid #cacaca;
       }
+    }
+  }
+
+  .add-new-task-form {
+    .full-width {
+      width: 100%;
     }
   }
 }
